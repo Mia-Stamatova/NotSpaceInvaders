@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Not_Space_Invaders
 {
@@ -8,7 +11,7 @@ namespace Not_Space_Invaders
     {
         private int frames;
         private float timeElapsed, timeToUpdate;
-        private isLooping = false;
+        private bool isLooping = false;
         private Vector2 origin;
         private float rotation = 0.0f;
         private float scale = 0.0f;
@@ -24,7 +27,7 @@ namespace Not_Space_Invaders
 
             for(int i = 0; i < inFrames; i++)
             {
-                rectangles[i] = new Rectangle(i * width, 0, spriteTexture.Height / 2);
+                rectangles[i] = new Rectangle(i * width, 0, spriteTexture.Height / 2, 0, 0);
             }
         }
 
