@@ -19,7 +19,8 @@ namespace Not_Space_Invaders
         private Rectangle[] rectangles;
         private int frameIndex = 0;
 
-        public Animation(Rectangle inPosition, Texture2D inTexture, Color inColour, int inFrames): base(inPosition, inTexture, inColour)
+        public Animation(Rectangle inPosition, Texture2D inTexture, Color inColour, int inFrames)
+            : base(inTexture, inPosition, inColour)
         {
             spriteTexture = inTexture;
             int width = inTexture.Width / inFrames;
@@ -27,13 +28,13 @@ namespace Not_Space_Invaders
 
             for(int i = 0; i < inFrames; i++)
             {
-                rectangles[i] = new Rectangle(i * width, 0, spriteTexture.Height / 2, 0, 0);
+                rectangles[i] = new Rectangle(i * width, 0, spriteTexture.Height / 2, 0);//not right - fix.
             }
         }
 
         public int FPS
         {
-            set { timeToUpdate = (1f/value)}
+            set { timeToUpdate = (1f / value); }
         }
 
         public void Update(GameTime inGameTime)
@@ -54,9 +55,9 @@ namespace Not_Space_Invaders
             }
         }
 
-        public bool Looping
-        {
-            get { }
-        }
+        //public bool Looping
+        //{
+        //    get { }
+        //}
     }
 }
