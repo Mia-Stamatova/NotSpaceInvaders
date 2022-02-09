@@ -10,7 +10,7 @@ namespace Not_Space_Invaders
     class Animation : Sprite
     {
         private int frames;
-        private float timeElapsed, timeToUpdate;
+        private float timeElapsed, timeToUpdate;//Comment
         private bool isLooping = false;
         private Vector2 origin;
         private float rotation = 0.0f;
